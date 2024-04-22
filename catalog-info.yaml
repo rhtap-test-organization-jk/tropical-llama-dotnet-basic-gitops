@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tropical-llama-dotnet-basic-gitops
+  description: This is GitOps manifest for tropical-llama-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: tropical-llama-dotnet-basic
+    janus-idp.io/tekton: tropical-llama-dotnet-basic 
+    backstage.io/kubernetes-id: tropical-llama-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tropical-llama-dotnet-basic
